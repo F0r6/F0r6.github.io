@@ -39,26 +39,71 @@
 		</div>
 	</section>
 
-	<!-- Two -->
-	<section id="two" class="wrapper style2">
+	<!-- Projects Section -->
+	<section id="projects" class="wrapper style3">
 		<div class="inner">
+			<header class="align-center">
+				<h2>My 3D Models</h2>
+				<p>A showcase of my work</p>
+			</header>
 			<div class="box">
 				<div class="content">
-					<header class="align-center">
-						<h2>Header</h2>
-						<p>Smth?</p>
-					</header>
-
-					<p></p>
-
-					<p></p>
-
-					<p></p>
-
+					<div class="project">
+						<h3>Project Title 1</h3>
+						<p>Description of the 3D model and your creative process.</p>
+						<div class="project-details">
+							<div class="project-image">
+								<img src="path/to/3d-model-thumbnail-1.jpg" alt="3D Model 1 Thumbnail" onclick="openModal('myModal1')">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+
+			<div class="box">
+				<div class="content">
+					<div class="project">
+						<h3>Project Title 2</h3>
+						<p>Description of the 3D model and your creative process.</p>
+						<div class="project-details">
+							<div class="project-image">
+								<img src="path/to/3d-model-thumbnail-2.jpg" alt="3D Model 2 Thumbnail" onclick="openModal('myModal2')">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Add more projects as needed -->
+
 		</div>
+
+	<!-- Modal for Interactive Viewing -->
+	<div id="myModal1" class="modal">
+		<span class="close" onclick="closeModal('myModal1')">&times;</span>
+		<img class="modal-content" id="img01" src="path/to/3d-model-1.jpg" alt="3D Model 1">
+		<div id="caption">Description of the 3D model and your creative process.</div>
+	</div>
+
+	<div id="myModal2" class="modal">
+		<span class="close" onclick="closeModal('myModal2')">&times;</span>
+		<img class="modal-content" id="img02" src="path/to/3d-model-2.jpg" alt="3D Model 2">
+		<div id="caption">Description of the 3D model and your creative process.</div>
+	</div>
+
+	<script>
+		// Function to open modal
+		function openModal(modalId) {
+			document.getElementById(modalId).style.display = "block";
+		}
+
+		// Function to close modal
+		function closeModal(modalId) {
+			document.getElementById(modalId).style.display = "none";
+		}
+	</script>
 	</section>
+
 
 	<!-- Footer -->
 	<footer id="footer">
