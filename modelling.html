@@ -52,8 +52,8 @@
 						<h3>Project Title 1</h3>
 						<p>Description of the 3D model and your creative process.</p>
 						<div class="project-details">
-							<div class="project-image">
-								<img src="path/to/3d-model-thumbnail-1.jpg" alt="3D Model 1 Thumbnail" onclick="openModal('myModal1')">
+							<div class="project-image" onclick="openModal('myModal1', 'path/to/3d-model-1.glb')">
+								<model-viewer src="path/to/3d-model-1.glb" alt="3D Model 1" auto-rotate camera-controls></model-viewer>
 							</div>
 						</div>
 					</div>
@@ -66,8 +66,8 @@
 						<h3>Project Title 2</h3>
 						<p>Description of the 3D model and your creative process.</p>
 						<div class="project-details">
-							<div class="project-image">
-								<img src="path/to/3d-model-thumbnail-2.jpg" alt="3D Model 2 Thumbnail" onclick="openModal('myModal2')">
+							<div class="project-image" onclick="openModal('myModal2', 'path/to/3d-model-2.glb')">
+								<model-viewer src="path/to/3d-model-2.glb" alt="3D Model 2" auto-rotate camera-controls></model-viewer>
 							</div>
 						</div>
 					</div>
@@ -78,30 +78,31 @@
 
 		</div>
 
-	<!-- Modal for Interactive Viewing -->
-	<div id="myModal1" class="modal">
-		<span class="close" onclick="closeModal('myModal1')">&times;</span>
-		<img class="modal-content" id="img01" src="path/to/3d-model-1.jpg" alt="3D Model 1">
-		<div id="caption">Description of the 3D model and your creative process.</div>
-	</div>
+		<!-- Modal for Interactive Viewing -->
+		<div id="myModal1" class="modal">
+			<span class="close" onclick="closeModal('myModal1')">&times;</span>
+			<model-viewer src="" alt="3D Model 1" auto-rotate camera-controls></model-viewer>
+			<div id="caption">Description of the 3D model and your creative process.</div>
+		</div>
 
-	<div id="myModal2" class="modal">
-		<span class="close" onclick="closeModal('myModal2')">&times;</span>
-		<img class="modal-content" id="img02" src="path/to/3d-model-2.jpg" alt="3D Model 2">
-		<div id="caption">Description of the 3D model and your creative process.</div>
-	</div>
+		<div id="myModal2" class="modal">
+			<span class="close" onclick="closeModal('myModal2')">&times;</span>
+			<model-viewer src="https://github.com/F0r6/F0r6.github.io/blob/main/models/SithHolo.fbx" alt="3D Model 2" auto-rotate camera-controls></model-viewer>
+			<div id="caption">Description of the 3D model and your creative process.</div>
+		</div>
 
-	<script>
-		// Function to open modal
-		function openModal(modalId) {
-			document.getElementById(modalId).style.display = "block";
-		}
+		<script>
+			// Function to open modal with 3D model
+			function openModal(modalId, modelUrl) {
+				document.getElementById(modalId).style.display = "block";
+				document.querySelector(`#${modalId} model-viewer`).src = modelUrl;
+			}
 
-		// Function to close modal
-		function closeModal(modalId) {
-			document.getElementById(modalId).style.display = "none";
-		}
-	</script>
+			// Function to close modal
+			function closeModal(modalId) {
+				document.getElementById(modalId).style.display = "none";
+			}
+		</script>
 	</section>
 
 
@@ -115,7 +116,8 @@
 				<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 			</ul>
 		</div>
-	</footer><div class="copyright">
+	</footer>
+	<div class="copyright">
 		Made with <a href="https://templated.co/">Templated</a>.
 	</div>
 
