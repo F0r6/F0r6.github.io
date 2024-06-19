@@ -2950,23 +2950,6 @@
 				overflow: hidden; /* Ensure content doesn't overflow */
 			}
 
-			.wrapper.style2 .model-viewer-container {
-				width: 500px; /* Set a fixed width */
-				height: 500px; /* Set a fixed height */
-				float: right; /* Align to the right */
-				margin-right: 20px; /* Add some margin to the right */
-				display: flex;
-				align-items:center;
-			}
-
-				.wrapper.style2 .model-viewer-container model-viewer {
-					width: 100%; /* Ensure model viewer fills its container */
-					height: 100%; /* Ensure model viewer fills its container */
-					border: 2px solid #000; /* Add a border to the model viewer */
-					background-color: rgba(0, 0, 0, 0.2);
-					box-sizing: border-box; /* Ensure border size is included in width and height */
-				}
-
 
 			.wrapper.style2 input[type="submit"],
 			.wrapper.style2 input[type="reset"],
@@ -3180,7 +3163,25 @@
 
 			.wrapper.style3 .box {
 				border-color: rgba(255, 255, 255, 0.25);
+				overflow: hidden; /* Ensure content doesn't overflow */
 			}
+
+			.wrapper.style3 .model-viewer-container {
+				width: 500px; /* Set a fixed width */
+				height: 500px; /* Set a fixed height */
+				float: right; /* Align to the right */
+				margin-right: 20px; /* Add some margin to the right */
+				display: flex;
+				align-items: center;
+			}
+
+				.wrapper.style3 .model-viewer-container model-viewer {
+					width: 100%; /* Ensure model viewer fills its container */
+					height: 100%; /* Ensure model viewer fills its container */
+					border: 2px solid #000; /* Add a border to the model viewer */
+					background-color: rgba(0, 0, 0, 0.2);
+					box-sizing: border-box; /* Ensure border size is included in width and height */
+				}
 
 			.wrapper.style3 input[type="submit"],
 			.wrapper.style3 input[type="reset"],
@@ -3735,7 +3736,7 @@
 /* Header */
 
 	body.subpage {
-		padding-top: 3.25em;
+		padding-top: 5.25em;
 	}
 
 	@-moz-keyframes reveal-header {
@@ -3790,9 +3791,9 @@
 		background: rgba(0, 0, 0, 0.975);
 		color: #a6a6a6;
 		cursor: default;
-		height: 3.25em;
+		height: 4.25em;
 		left: 0;
-		line-height: 3.25em;
+		line-height: 4.25em;
 		position: fixed;
 		text-align: right;
 		top: 0;
@@ -3803,10 +3804,10 @@
 		#header > .logo {
 			display: inline-block;
 			height: inherit;
-			left: 1.25em;
+			left: 1rem;
 			line-height: inherit;
 			margin: 0;
-			padding: 0;
+			padding: .5rem;
 			position: absolute;
 			top: 0;
 		}
@@ -4409,3 +4410,60 @@
 
 		}
 
+
+/* Image Arrangement */
+        .rowImg {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+            margin: -4px;
+        }
+
+        /* Create four equal columns that sit next to each other */
+        .columnImg {
+            flex: 25%;
+            max-width: 25%;
+            padding: 4px;
+            box-sizing: border-box;
+        }
+
+        .columnImg img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Ensure images cover the area without stretching */
+        }
+
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 800px) {
+            .columnImg {
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .columnImg {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+
+
+
+
+	/* Image Preview */
+
+	/* styles.css */
+	.thumbnail {
+		width: 100px;
+		height: auto;
+		cursor: pointer;
+		transition: 0.3s;
+	}
+
+		.thumbnail:hover {
+			opacity: 0.7;
+		}
