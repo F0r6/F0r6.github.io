@@ -3791,9 +3791,9 @@
 		background: rgba(0, 0, 0, 0.975);
 		color: #a6a6a6;
 		cursor: default;
-		height: 4.25em;
+		height: 5.25em;
 		left: 0;
-		line-height: 4.25em;
+		line-height: 5.25em;
 		position: fixed;
 		text-align: right;
 		top: 0;
@@ -4502,6 +4502,9 @@
 .breadcrumbs {
 	list-style: none;
 	display: flex;
+	padding: 10px;
+	margin: -95px 70px;
+	flex-grow: 1;
 }
 
 .breadcrumbs li {
