@@ -4,6 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentPath = window.location.pathname;
     let history = JSON.parse(localStorage.getItem('breadcrumbHistory')) || [];
 
+    // Map paths to display names
+    const pathNames = {
+        '/index.html': 'Homepage',
+        '/about.html': 'About Me',
+        '/programming.html': 'Programming',
+        '/modelling.html': '3D Modelling',
+        '/gallery.html': 'Gallery',
+        // Add more paths and their display names as needed
+    };
+
     if (!history.includes(currentPath)) {
         history.push(currentPath);
         localStorage.setItem('breadcrumbHistory', JSON.stringify(history));
@@ -14,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const li = document.createElement('li');
             const a = document.createElement('a');
             a.href = path;
-            a.textContent = path.substring(1) || 'Home';
+            a.textContent = pathNames[path] || path.substring(1) || 'Home'; // Use the display name if available
             li.appendChild(a);
             breadcrumbList.appendChild(li);
         }
