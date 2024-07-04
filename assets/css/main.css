@@ -4494,3 +4494,30 @@
 		.thumbnail:hover {
 			opacity: 0.7;
 		}
+
+
+
+/* Style the breadcrumb list*/
+
+.breadcrumbs {
+	list-style: none;
+	display: flex;
+}
+
+.breadcrumbs li {
+	margin-right: 1px;
+}
+
+	.breadcrumbs li + li:before {
+		content: ">";
+		margin-right: 5px;
+	}
+
+.breadcrumbs a {
+	text-decoration: none;
+	color: #007BFF;
+}
+
+	.breadcrumbs a:hover {
+		text-decoration: underline;
+	}
