@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Map paths to display names
     const pathNames = {
-        '/index.html': 'Homepage',
         '/about.html': 'About Me',
         '/programming.html': 'Programming',
         '/modelling.html': '3D Modelling',
